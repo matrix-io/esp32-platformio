@@ -1,1 +1,0 @@
-../esp32-arduino-ota/Starter/Starter.ino
