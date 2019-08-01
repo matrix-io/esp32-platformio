@@ -67,7 +67,7 @@ pio run
 ```
 #### upload initial firmware
 
-Enter to OTA directory and upload the firmware. Please replace the IP with your `RaspberryPi ip`:
+Enter to OTA directory and upload the firmware. Please replace the `ip` with your `RaspberryPi ip`:
 
 ```bash
 cd ota
@@ -113,7 +113,7 @@ done
 
 ## Upload via PlatformIO OTA
 
-After that you can using your MatrixVoice with RaspberryPi and you only need for a new OTA firmware update:
+After that you can using your MatrixVoice without RaspberryPi and you only need for a new OTA firmware update:
 
 ```bash
 pio run --target upload
