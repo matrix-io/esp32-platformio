@@ -42,7 +42,7 @@ void loop()
   otaObj.loop();
 
   for (hal::LedValue &led : image1d.leds) {
-    led.red   = 0;
+    led.red   = 30;
     led.green = 0;
     led.blue  = 5;
     led.white = 0;

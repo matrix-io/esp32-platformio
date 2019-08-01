@@ -4,6 +4,7 @@ The current project show how build and upload any firmware for [MatrixVoice ESP3
 
 **note**: The next documentation is based on [Program Over the Air on ESP32 MATRIX Voice](https://www.hackster.io/matrix-labs/program-over-the-air-on-esp32-matrix-voice-5e76bb) documentation but it using PlatformIO instead Arduino IDE. You dont need IDF toolchain or any library, PlatformIO do it for you.
 
+---
 
 ## Prerequisites
 
@@ -11,7 +12,6 @@ The current project show how build and upload any firmware for [MatrixVoice ESP3
 
 Please install first [PlatformIO](http://platformio.org/) open source ecosystem for IoT development and its command line tools (Windows, MacOs and Linux). Also, you may need to install [git](http://git-scm.com/) in your system (PC).
 
----
 
 ### MatrixVoice software
 
@@ -41,9 +41,8 @@ sudo reboot
 ```bash
 voice_esp32_enable
 ```
----
 
-### Building initial firmware for OTA
+### Installing initial firmware for OTA
 
 Return to your PC and clone this repository:
 
@@ -55,19 +54,19 @@ Copy `platformio.ini` sample and change your network parameters:
 ```bash
 cp platformio.ini.sample platformio.ini
 ```
-**NOTE:** plase change `platformio.ini` and set your SSID and PASSW like this:
+**NOTE:** plase change `platformio.ini` and set your `SSID` and `PASSW` like this:
 
 ```python
 '-DWIFI_SSID="MyWifiSsid"'       
 '-DWIFI_PASS="MyWifiPassw"'      
 ```
-##### Building initial firmware
+##### building
 ```bash
 pio run
 ```
-#### upload initial firmware
+##### upload
 
-Enter to OTA directory and upload the firmware. Please replace the `ip` with your `RaspberryPi ip`:
+Enter to OTA directory and upload the firmware. Please replace the `ip` parameter with your `RaspberryPi ip` like this:
 
 ```bash
 cd ota
@@ -108,16 +107,19 @@ done
 
 [SUCCESS] Please disconnect your MatrixVoice from the RaspberryPi and reconnect it alone for future OTA updates.
 ```
+(end of `Prerequisites`)
 
 ---
 
 ## Upload via PlatformIO OTA
 
-After that you can using your MatrixVoice without RaspberryPi and you only need for a new OTA firmware update:
+After that you can using your MatrixVoice `without` RaspberryPi and you only need for a new OTA firmware update:
 
 ```bash
 pio run --target upload
 ```
+
+---
 
 ## Troubleshooting
 
