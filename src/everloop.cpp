@@ -16,8 +16,7 @@ static hal::Everloop everloop;
 static hal::MicrophoneArray mics;
 static hal::EverloopImage image1d;
 
-// arguments: YOUR_WIFI_SSID, YOUR_WIFI_PASS, YOUR_CHOSEN_ESP32_ID, YOUR_CHOSEN_ESP32_PASSWORD
-MATRIXVoiceOTA otaObj("YOUR_WIFI_SSID","YOUR_WIFI_PASS", "matrixvoice", "voice");
+MATRIXVoiceOTA otaObj(WIFI_SSID,WIFI_PASS,MVID,MVPASS); // please see platformio.ini
 
 void setup() {
   // put your setup code here, to run once:
@@ -37,16 +36,17 @@ void setup() {
   otaObj.setup();
 }
 
-void loop() {
+void loop()
+{
   // put your main code here, to run repeatedly:
   otaObj.loop();
 
-        for (hal::LedValue& led : image1d.leds) {
-            led.red = 0;
-            led.green = 0;
-            led.blue = 5;
-            led.white = 0;
-    }
+  for (hal::LedValue &led : image1d.leds) {
+    led.red   = 0;
+    led.green = 0;
+    led.blue  = 5;
+    led.white = 0;
+  }
 
-    everloop.Write(&image1d);  
+  everloop.Write(&image1d);
 }
