@@ -36,17 +36,27 @@ void setup() {
   otaObj.setup();
 }
 
-void loop()
-{
-  // put your main code here, to run repeatedly:
-  otaObj.loop();
+unsigned counter = 0;
 
+void everloopAnimation() {
   for (hal::LedValue &led : image1d.leds) {
-    led.red   = 30;
+    led.red = 0;
     led.green = 0;
-    led.blue  = 5;
+    led.blue = 0;
     led.white = 0;
   }
+  image1d.leds[(counter / 2) % image1d.leds.size()].red = 20;
+  image1d.leds[(counter / 7) % image1d.leds.size()].green = 30;
+  image1d.leds[(counter / 11) % image1d.leds.size()].blue = 30;
+  image1d.leds[image1d.leds.size() - 1 - (counter % image1d.leds.size())].white = 10;
 
+  ++counter;
   everloop.Write(&image1d);
+  usleep(25000);
+}
+
+void loop() {
+  // put your main code here
+  everloopAnimation();
+  otaObj.loop();
 }
