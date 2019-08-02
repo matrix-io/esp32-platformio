@@ -1,5 +1,6 @@
 #include "MATRIXVoiceOTA.h"
 
+#include <Arduino.h>
 #include "wishbone_bus.h"
 #include "everloop.h"
 #include "everloop_image.h"
@@ -19,21 +20,22 @@ static hal::EverloopImage image1d;
 MATRIXVoiceOTA otaObj(WIFI_SSID,WIFI_PASS,MVID,MVPASS); // please see platformio.ini
 
 void setup() {
-  // put your setup code here, to run once:
-
+  Serial.begin(115200);
+  Serial.println("[SETUP] MatrixVoice init..");
   wb.Init();
   everloop.Setup(&wb);
   
-  //setup mics
+  // setup mics
   mics.Setup(&wb);
   mics.SetSamplingRate(RATE);
-  //mics.SetGain(5);
+  // mics.SetGain(5);
 
-   // Microphone Core Init
+  // microphone core init
   hal::MicrophoneCore mic_core(mics);
   mic_core.Setup(&wb);
 
   otaObj.setup();
+  Serial.println("[SETUP] MatrixVoice done.");
 }
 
 unsigned counter = 0;
