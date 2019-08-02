@@ -127,5 +127,16 @@ pio lib update
 
 ## Troubleshooting
 
+#### Uploading issues
+
 If `pio run --target upload` not works, please check `MVID` parameter, it should be a short name, or you can passing ESP32 ip in `upload_port` parameter in `platformio.ini` file.
 
+#### Building issues
+
+For a complete `clean` of the project and get the last version of the libraries, please test the next commands:
+
+```javascript
+git pull
+pio run -t clean && rm -r .pio
+pio run
+```
