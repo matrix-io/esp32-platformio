@@ -57,8 +57,8 @@ cp platformio.ini.sample platformio.ini
 **NOTE:** plase change `platformio.ini` and set your `SSID` and `PASSW` like this:
 
 ```python
-'-DWIFI_SSID="MyWifiSsid"'       
-'-DWIFI_PASS="MyWifiPassw"'      
+'-DWIFI_SSID="MyWifiSsid"'
+'-DWIFI_PASS="MyWifiPassw"'
 ```
 ##### building
 ```bash
@@ -66,7 +66,7 @@ pio run
 ```
 ##### upload
 
-Enter to OTA directory and upload the firmware. Please replace the `ip` parameter with your `RaspberryPi ip` like this:
+Enter to OTA directory and upload the firmware. Please replace the `ip` parameter with your `RaspberryPi` ip like this:
 
 ```bash
 cd ota
@@ -113,10 +113,14 @@ done
 
 ## Upload via PlatformIO OTA
 
-After that you can using your MatrixVoice `without` RaspberryPi and you only need for a new OTA firmware update:
-
+After that, you can using your MatrixVoice `without` RaspberryPi. For send new OTA updates, you only need:
 ```bash
 pio run --target upload
+```
+
+For update `MatrixVoice` libraries in the future, you only need:
+```bash
+pio lib update
 ```
 
 ---
@@ -124,10 +128,4 @@ pio run --target upload
 ## Troubleshooting
 
 If `pio run --target upload` not works, please check `MVID` parameter, it should be a short name, or you can passing ESP32 ip in `upload_port` parameter in `platformio.ini` file.
-
-
-
-
-
-
 
