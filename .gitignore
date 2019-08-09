@@ -48,8 +48,6 @@ secrets.load
 secrets.load.*
 install/*
 releases/*
-platformio.ini
-platformio.ini.*
 ota/firmware.bin
 
 # IDE
