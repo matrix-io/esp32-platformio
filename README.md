@@ -20,7 +20,7 @@ For get OTA updates without RaspberryPi, first you should have a one RaspberryPi
 ##### add debian repository key:
 
 ```bash
-curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
+curl -L https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
 echo "deb https://apt.matrix.one/raspbian $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/matrixlabs.list
 ```
 
