@@ -47,14 +47,11 @@ voice_esp32_enable
 Return to your PC and clone this repository:
 
 ```bash
-git clone https://github.com/hpsaturn/matrixvoice_platformio.git
+git clone https://github.com/matrix-io/esp32-platformio.git
 cd matrixvoice_platformio
 ```
-Copy `platformio.ini` sample and change your network parameters:
-```bash
-cp platformio.ini.sample platformio.ini
-```
-**NOTE:** plase change `platformio.ini` and set your `SSID` and `PASSW` like this:
+Update `platformio.ini` with your network parameters:
+**NOTE:** plase set your `SSID` and `PASSW` like this:
 
 ```python
 '-DWIFI_SSID="MyWifiSsid"'
